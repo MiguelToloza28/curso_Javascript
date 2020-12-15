@@ -1,0 +1,166 @@
+Classes
+
+Son una mejora sintáctica sobre la herencia basada en prototipos de JavaScript. 
+La sintaxis de las clases no introduce un nuevo modelo de herencia orientada a objetos en JavaScript. 
+Las clases de JavaScript proveen una sintaxis mucho más clara y simple para crear 
+objetos y lidiar con la herencia.
+
+Son "funciones especiales", como las expresiones de funciones y declaraciones de funciones, 
+la sintaxis de una clase tiene dos componentes: expresiones de clases y declaraciones de clases.
+
+Una clase nos permite organizar nuestro codigo, separa las variables
+y las funciones.
+
+Una manera de definir una clase es mediante una declaración de clase. Para declarar una clase, 
+se utiliza la palabra reservada class y un nombre para la clase "SoyUnaClase".
+
+    class SoyUnaClase {
+
+    }
+
+
+A una clase se le pueden agregar propiedades, para asignar estas propiedades 
+se tiene que utilizar un metodo llamado constructor.
+
+El contenido de una clase es la parte que se encuentra entre las llaves {}. 
+Este es el lugar se definen los miembros de clase, como los métodos o constructores.
+
+    class SoyUnaClase {
+        constructor(){
+
+        }
+    }
+
+    Un constructor es una funcion que se ejecuta una vez que se haga una
+    instancia de la clase.
+
+    Es un método especial para crear e inicializar un objeto creado con una clase. 
+    Solo puede haber un método especial con el nombre "constructor" en una clase. 
+    Si esta contiene mas de una ocurrencia del método constructor, se arrojará un Error SyntaxError
+
+    para asignar la variable se utiliza la palabra reservada "this."
+
+    class Usuario {
+        constructor(){
+            this.nombre = 'Miguel Toloza',
+            this.edad = 23
+        }
+    }
+
+Cuando ya se definen las propiedades, podemos crear una instancia.
+Una instancia es
+
+    const miguel = new SoyUnaClase();
+
+    Con esto definimos que la constante "miguel" sea un nuevo "Usuario".
+    "Usuario" tiene un nombre y una edad, por lo tanto se puede acceder 
+    a esos valores.
+
+
+En primer lugar necesitamos declarar la clase y luego acceder a ella, 
+de otro modo el ejemplo de código siguiente arrojará un ReferenceError:
+
+    const p = new SoyUnaClase(); // ReferenceError
+
+    class SoyUnaClase {}
+
+/*************************************************************/
+
+Hemos declarado una clase con valores default
+
+Crearemos una clase con valores dinamicos (paso de parametros)
+
+    Para pasar parametros a una clase se hace desde la instancia, y se envian
+    al constructor.
+
+    class Usuario{
+        constructor(nombre, edad)
+        {
+            this.nombre = nombre,
+            this.edad = edad
+        }
+    }
+
+    const alguien = new Usuario('alguien', 20);
+    
+/*******************************************************/
+
+En una clase tambien se puede tener funciones.
+
+Las funciones dentro de una clase se le llaman metodos, entonces un metodo y una funcion
+es lo mismo, solamente que se le llama metodo cuando esta adentro de una clase.
+
+Un metodo se declara de la siguiente manera:
+
+    soyUnMetodo()
+    {
+        return 'hola';
+    }
+
+Hagamoslo dentro de la clase
+
+    class SoyUnaClase {
+        constructor() {
+
+            }
+
+            soyUnMetodo()
+            {
+                return 'Hola clase';
+            }
+    }
+
+    const miguel = new Usuario();
+    document.write(miguel.soyUnMetodo());
+
+
+Tambien se puede hacer un paso de parametros al metodo,
+    Se hace desde la llamada al metodo y se le pasa el parametro al metodo
+
+
+    class SoyUnaClase {
+        constructor() {
+
+            }
+
+            soyUnMetodo(mensaje)
+            {
+                return mensaje;
+            }
+    }
+
+    const miguel = new Usuario();
+    document.write(miguel.soyUnMetodo('Hola clase'));
+
+
+Estos son un ejemplo basico de metodos
+
+Ejemplo mas complejo (uso de template string ES6)
+
+Llamar a la propiedades de la clase
+
+Template String:
+        nos permiten usar plantillas sencillas directamente en el código
+
+            ejemplo:
+                var nombre="cecilio";
+                var plantilla= `hola que tal estas ${nombre}`;
+
+5
+
+    verInformacion() {
+        return `
+            Nombre: ${this.nombre} <br/>
+            Edad: ${this.edad} <br/>
+            Correo: ${this.correo} <br/>
+        `;
+    }
+
+
+
+
+
+
+
+
+    
